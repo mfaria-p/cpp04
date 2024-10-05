@@ -5,17 +5,17 @@ SRCS =	main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = scavtrap
-CC = c++
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+NAME = animals
+CXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
